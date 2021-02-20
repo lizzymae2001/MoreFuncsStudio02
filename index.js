@@ -12,26 +12,10 @@ function findMinValue(arr){
   }
   return min;
 }
-
 //console.log(findMinValue(nums2));
 
+
 //Create a function with an array of numbers as its parameter. This function will return a new array with the numbers sorted from least to greatest value.
-
-
-numberSort = function(arr){
-let sortedArray = [findMinValue(arr)];
- if (arr.length === 0){
-    return sortedArray;
- } else {
-    arr.splice[findMinValue(arr), 1];
-    sortedArray.push(arr[findMinValue(arr), 1])
-    
- }
-return sortedArray;
-}
-
-console.log(numberSort(nums3));
-
 
 /*Within the function:
 a) Define a new, empty array to hold the final sorted numbers.
@@ -43,6 +27,32 @@ f) Be sure to print the results in order to verify your code.*/
 
 //Your function here...
 
+let sortedArray = [];
 
+let numberSort = function(arr){
+  while (arr.length > 0){
+    sortedArray.push(findMinValue(arr));
+    minPosition = arr.indexOf(findMinValue(arr));
+    arr.splice(minPosition,1);
+  }
+  return sortedArray;
+}
 
+console.log(numberSort(nums3));
+console.log(nums3);
 
+/*WORKING ON BONUS USING RECURSION:
+let recursionSort = [];
+recursionSort = function(arr){
+  if (arr.length === 0){
+    return recursionSort;
+  } else {
+    recursionSort.push(findMinValue(arr));
+    minPosition = arr.indexOf(findMinValue(arr));
+    arr.splice(minPosition,1);
+
+  }
+
+}
+
+*/
